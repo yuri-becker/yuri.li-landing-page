@@ -1,0 +1,3 @@
+firebase serve
+
+firebase deploy
