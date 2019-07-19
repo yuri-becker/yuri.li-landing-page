@@ -4,8 +4,10 @@
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "public/index.css"
     ],
+    "predeploy": "uglifycss public/index.css > public/index.min.css",
     "rewrites": [
       {
         "source": "**",
