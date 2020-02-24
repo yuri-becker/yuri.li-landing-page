@@ -1,0 +1,59 @@
+{
+  "name": "yuri.li-landing-page.web",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/node": "^12.12.27",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "axios": "^0.19.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.3.1",
+    "typescript": "^3.7.5"
+  },
+  "devDependencies": {
+    "firebase-tools": "^7.13.0",
+    "uglifycss": "^0.0.29"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "npm run uglifyRootCss && react-scripts build",
+    "eject": "react-scripts eject",
+    "uglifyRootCss": "uglifycss public/index.css > public/index.min.css"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "rules": {
+      "no-extra-semi": "error",
+      "curly": [
+        "error",
+        "multi"
+      ],
+      "func-style": [
+        "error",
+        "expression"
+      ],
+      "prefer-template": "error",
+      "quotes": [
+        "error",
+        "single",
+        {
+          "avoidEscape": true
+        }
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
