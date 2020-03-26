@@ -3,5 +3,5 @@ export interface IBlogPost {
   title: string,
   link: string,
   date: Date,
-  categories: string[]
+  categories: {key: string}[]
 }

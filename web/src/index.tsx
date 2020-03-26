@@ -1,10 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {Blog} from './blog/Blog';
-import {Projects} from './Projects'
-import {Contact} from './Contact'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {Blog} from './blog/Blog'
+import {Defer} from 'react-progressive-loader/lib'
+import Rellax from 'rellax'
+import {Loader} from './common/Loader'
 
-ReactDOM.render(<Blog />, document.getElementById('blog'));
-ReactDOM.render(<Projects />, document.getElementById('projects'));
-ReactDOM.render(<Contact />, document.getElementById('contact'));
+
+function initSection(id: string, component: React.FC) {
+  const el = document.getElementById(id) as HTMLElement
+  new Rellax(el, {speed: 4})
+  ReactDOM.render(<Defer render={component} loadOnScreen renderPlaceholder={() => <Loader/>} />, el)
+}
+
+initSection('blog', () => <Blog/>)
+initSection('skills', () => <div/>)
+
 

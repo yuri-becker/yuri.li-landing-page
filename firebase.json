@@ -5,7 +5,7 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**",
-      "web/public/index.css"
+      "web/public/*.scss"
     ],
     "predeploy": "npm --prefix web run build",
     "rewrites": [
