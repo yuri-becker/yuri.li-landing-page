@@ -7,12 +7,17 @@ import {Loader} from '../common/Loader'
 export const Blog = () => {
   const [blogPosts, setBlogPosts] = useState<undefined | IBlogPost[]>()
 
-  useEffect(() => {fetchPosts().then(setBlogPosts)}, [setBlogPosts])
+  useEffect(() => {
+    fetchPosts().then(setBlogPosts)
+  }, [setBlogPosts])
 
   return (
-    <div className="content-wrap">
-      <h2>Recent Stories on Medium</h2>
-      {blogPosts ? blogPosts.map(blogPost => (<BlogPost key={blogPost.key} blogPost={blogPost}/>)) : <Loader/>}
+    <div className='content-side-image-wrap'>
+      <img src='/assets/images/blog.jpg' alt='My trusty Model M keyboard'/>
+      <div className="content-wrap">
+        <h2>Recent Stories on Medium</h2>
+        {blogPosts ? blogPosts.map(blogPost => (<BlogPost key={blogPost.key} blogPost={blogPost}/>)) : <Loader/>}
+      </div>
     </div>
   )
 }
@@ -28,7 +33,7 @@ const fetchPosts: () => Promise<IBlogPost[]> = () => {
       date: new Date(Date.parse(item.getElementsByTagName('atom:updated')[0].textContent as string)),
       link: item.getElementsByTagName('link')[0].textContent as string,
       categories: Array.from(item.getElementsByTagName('category'))
-        .map(category => ({key: (category.textContent as string).replace("-", " ")}))
+        .map(category => ({key: (category.textContent as string).replace('-', ' ')}))
     } as IBlogPost)))
     .then(posts => posts.filter(post => post.categories.length !== 0))
     .then(posts => posts.slice(0, 5))

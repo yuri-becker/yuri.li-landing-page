@@ -3,6 +3,13 @@
 $bertha-base: #2c2828;
 $regina-red: #f67280;
 $pamela-purple: #6c567b;
+$golden-ratio: 61.80%;
+
+@mixin small-screens {
+  @media all and (max-width: 670px) {
+    @content;
+  }
+}
 
 html, body {
   background-color: $bertha-base;
@@ -42,15 +49,27 @@ body {
   justify-content: flex-start;
 }
 
-.content-figure-text-right-wrap {
-
+.content-side-image-wrap {
+  display: flex;
+  > img {
+    width: 100%- $golden-ratio;
+    object-fit: cover;
+  }
 }
 
-.content-figure-text-left-wrap {
+@include small-screens {
+  .content-side-image-wrap {
+    flex-direction: column;
 
+    > img {
+      width: 100%;
+      height: 39vh;
+      max-height: 20rem;
+    }
+  }
 }
 
-@media all and (max-width: 500px) {
+@include small-screens {
   .content-wrap {
     width: 100%;
   }
@@ -147,23 +166,31 @@ section#about {
   }
 }
 
-@mixin section-transition($dir, $section-before-color) {
-  $angle: 3deg;
-  @if $dir == 'left' {
-    $angle: -3deg;
+@mixin section-transition($dir) {
+
+  $slope-height: 4.4rem;
+
+  .content-wrap {
+    padding-top: $slope-height;
+    padding-bottom: $slope-height;
   }
 
-  &:before {
-    content: "";
-    display: block;
-    height: calc(#{tan(abs($angle))} * 100vw);
-    background-image: linear-gradient($angle, transparent 50%, $section-before-color calc(50% + 2px));
+  @include small-screens {
+    .content-wrap {
+      padding-top: 1rem;
+    }
+  }
+
+  @if $dir == 'right' {
+    clip-path: polygon(100% $slope-height, 100% calc(100% - #{$slope-height}), 0 100%, 0 0);
+  } @else {
+    clip-path: polygon(100% 0, 100% 100%, 0 calc(100% - #{$slope-height}), 0 $slope-height);
   }
 }
 
 section#blog {
   background-color: $regina-red;
-  @include section-transition('right', $bertha-base);
+  @include section-transition('right');
 }
 
 .blog-post {
@@ -193,14 +220,15 @@ section#blog {
 
 #skills {
   background-color: $pamela-purple;
-  @include section-transition('left', $regina-red);
+  @include section-transition('left');
 }
 
 .loader {
   font-family: monospace;
   font-size: .7em;
   line-height: 1.2em;
-  height: 5em;
+  height: 10em;
+  max-height: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: fade;
