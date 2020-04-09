@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "web/public",
+    "appAssociation": "AUTO",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -12,6 +13,10 @@
       {
         "source": "**",
         "destination": "/index.html"
+      },
+      {
+        "source": "/ref/**",
+        "dynamicLinks": true
       }
     ]
   },
