@@ -5,11 +5,12 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Yuri</title>
-    <meta name="description" content="yuri.li">
+    <title>Yuri | Web-developer and -designer</title>
+    <meta name="description" content="I'm Yuri, a web developer living in Berlin speaking mostly in JavaScript/TypeScript and CSS/SCSS, as well as C# and Java.">
     <meta name="author" content="Yuri Becker">
     <meta name="viewport" content="width=device-width"/>
     <link rel="apple-touch-icon" sizes="57x57" href="%PUBLIC_URL%/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="%PUBLIC_URL%/assets/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="60x60" href="%PUBLIC_URL%/assets/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="%PUBLIC_URL%/assets/favicon/apple-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="76x76" href="%PUBLIC_URL%/assets/favicon/apple-icon-76x76.png">
@@ -70,6 +71,20 @@
     </section>
     <section id="footer"></section>
 </main>
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyAduCMSLLbdF0CQ5_ANJSetOqTWEAz0WMY",
+    authDomain: "landing-page-245120.firebaseapp.com",
+    databaseURL: "https://landing-page-245120.firebaseio.com",
+    projectId: "landing-page-245120",
+    storageBucket: "landing-page-245120.appspot.com",
+    messagingSenderId: "148555408977",
+    appId: "1:148555408977:web:ead6b38a7296d537bcba70"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
 </body>
 
 </html>

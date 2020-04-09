@@ -22,9 +22,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run uglifyRootCss && react-scripts build",
+    "build": "npm run compileCss && react-scripts build",
     "eject": "react-scripts eject",
-    "compileCss": "node-sass --output-style compressed public/index.scss > public/index.min.css"
+    "compileCss": "node-sass --output-style compressed public/index.scss > public/index.min.css",
+    "deploy-live": "firebase deploy --only hosting:landing-page-245120",
+    "deploy-staging": "firebase deploy --only hosting:staging-245120"
   },
   "eslintConfig": {
     "extends": "react-app",

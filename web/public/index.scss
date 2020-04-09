@@ -184,7 +184,7 @@ section#about {
   @if $dir == 'right' {
     clip-path: polygon(100% $slope-height, 100% calc(100% - #{$slope-height}), 0 100%, 0 0);
   } @else {
-    clip-path: polygon(100% 0, 100% 100%, 0 calc(100% - #{$slope-height}), 0 $slope-height);
+    clip-path: polygon(0 $slope-height, 100% 0, 100% 100%, 0 calc(100% - #{$slope-height}));
   }
 }
 

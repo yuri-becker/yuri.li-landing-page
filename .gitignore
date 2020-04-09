@@ -9,7 +9,7 @@ firebase-debug.log
 
 # dependencies
 /node_modules
-web/node_modules
+/web/node_modules
 /.pnp
 .pnp.js
 
@@ -17,7 +17,7 @@ web/node_modules
 /coverage
 
 # production
-/build
+/web/build
 
 # misc
 .DS_Store
