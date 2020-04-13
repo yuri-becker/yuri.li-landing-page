@@ -4,6 +4,7 @@ $bertha-base: #2c2828;
 $regina-red: #f67280;
 $pamela-purple: #6c567b;
 $golden-ratio: 61.80%;
+$walter-white: #fff;
 
 @mixin small-screens {
   @media all and (max-width: 670px) {
@@ -15,7 +16,7 @@ html, body {
   background-color: $bertha-base;
   min-height: 100%;
   font-family: 'Nunito', sans-serif;
-  color: #fff;
+  color: $walter-white;
 
   font-size: 20px;
   line-height: 1.7em;
@@ -47,6 +48,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .content-side-image-wrap {
@@ -89,8 +91,9 @@ h1 {
 }
 
 a {
-  color: #fff;
+  color: $walter-white;
   transition: transform 0.7s linear;
+  transform-origin: center;
   text-decoration: underline;
   display: inline-block;
 
@@ -164,6 +167,14 @@ section#about {
     margin-top: 1.6rem;
     text-align: justify;
   }
+
+  > h1 {
+    align-items: center;
+  }
+
+  .socials-container {
+    align-self: flex-end;
+  }
 }
 
 @mixin section-transition($dir) {
@@ -232,4 +243,39 @@ section#blog {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: fade;
+}
+
+ul.skills-list {
+  list-style: none;
+  padding: 0;
+  font-weight: 600;
+
+
+  .skills__stars {
+    i {
+      margin-right: .4em;
+
+      &:last-child {
+        margin-right: 1em;
+      }
+    }
+  }
+}
+
+button {
+  background-color: $regina-red;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: .4em .5em;
+  border: none;
+  border-radius: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: $walter-white;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &.button--flat {
+    box-shadow: none;
+    background: none;
+  }
 }

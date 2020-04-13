@@ -5,6 +5,7 @@ import {Defer} from 'react-progressive-loader/lib'
 import {Loader} from './common/Loader'
 import {Skills} from './skills/Skills'
 import {EmbeddedSkillsRepository} from './EmbeddedSkillsRepository'
+import {MediumBlogRepository} from './MediumBlogRepository'
 
 
 function initSection(id: string, component: React.FC) {
@@ -14,7 +15,7 @@ function initSection(id: string, component: React.FC) {
   )
 }
 
-initSection('blog', () => <Blog/>)
+initSection('blog', () => <Blog blogRepo={new MediumBlogRepository()}/>)
 initSection('skills', () => <Skills skillsRepo={new EmbeddedSkillsRepository()}/>)
 
 

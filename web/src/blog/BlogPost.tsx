@@ -1,5 +1,5 @@
-import {IBlogPost} from './IBlogPost'
 import React from 'react'
+import {BlogPost as IBlogPost} from '../BlogRepository'
 
 export const BlogPost: React.FC<{blogPost: IBlogPost}> = ({blogPost}) => {
   return (<div className='blog-post'>

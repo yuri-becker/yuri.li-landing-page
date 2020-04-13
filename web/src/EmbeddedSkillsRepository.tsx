@@ -8,6 +8,7 @@ export class EmbeddedSkillsRepository implements SkillsRepository {
     {name: 'Java', level: 5},
     {name: 'Angular', level: 4},
     {name: 'React', level: 4},
+    {name: 'Spring', level: 4},
   ]
 
   get skills() {
