@@ -2,6 +2,7 @@ import React, {FC, useEffect, useState} from 'react'
 import {Skill as ISkill, SkillsRepository} from '../SkillsRepository'
 import {Loader} from '../common/Loader'
 import {range} from 'lodash'
+import {ParallaxImage} from '../common/ParallaxImage'
 
 export const Skills: FC<{ skillsRepo: SkillsRepository }> = ({skillsRepo}) => {
   const [skills, setSkills] = useState<ISkill[] | undefined>(undefined)
@@ -26,7 +27,7 @@ export const Skills: FC<{ skillsRepo: SkillsRepository }> = ({skillsRepo}) => {
         </React.Fragment>
       }
     </div>
-    <img src='/assets/images/skills.jpg' alt='Screen showing HTML code'/>
+    <ParallaxImage src='/assets/images/skills.jpg' alt='Screen showing HTML code' className='section-image'/>
   </div>
 }
 
