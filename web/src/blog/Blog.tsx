@@ -9,7 +9,7 @@ export const Blog: React.FC<{ blogRepo: BlogRepository }> = ({blogRepo}) => {
 
   useEffect(() => {
     blogRepo.blogPosts.then(posts => posts.slice(0, 5)).then(setBlogPosts)
-  }, [setBlogPosts])
+  }, [setBlogPosts, blogRepo])
 
 
   return (
