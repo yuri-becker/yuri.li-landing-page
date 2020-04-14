@@ -12,6 +12,12 @@ $walter-white: #fff;
   }
 }
 
+@mixin large-screens {
+  @media all and (min-width: 670px) {
+    @content;
+  }
+}
+
 html, body {
   background-color: $bertha-base;
   min-height: 100%;
@@ -53,8 +59,22 @@ body {
 
 .content-side-image-wrap {
   display: flex;
+
   > .section-image {
     width: 100%- $golden-ratio;
+  }
+
+}
+
+@include large-screens {
+  .content-side-image-wrap {
+    > .content-wrap:first-child {
+      padding-left: 16.6vw;
+    }
+
+    > .content-wrap:last-child {
+      padding-right: 16.6vw;
+    }
   }
 }
 
@@ -249,7 +269,7 @@ ul.skills-list {
   list-style: none;
   padding: 0;
   font-weight: 600;
-
+  margin: 0;
 
   .skills__stars {
     i {
@@ -263,9 +283,6 @@ ul.skills-list {
 }
 
 button {
-  background-color: $regina-red;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  padding: .4em .5em;
   border: none;
   border-radius: 0;
   font-family: inherit;
@@ -274,17 +291,33 @@ button {
   cursor: pointer;
   text-decoration: underline;
 
+  &:not(.button--flat) {
+    background-color: $regina-red;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding: .5em 1.3em;
+  }
+
   &.button--flat {
-    box-shadow: none;
     background: none;
+    box-shadow: none;
+    padding: 0;
   }
 }
 
 .parallax-img-wrapper {
   overflow: hidden;
+
   > img {
     width: 100%;
     height: 200%;
     object-fit: cover;
   }
+}pa
+
+.skills__more {
+  margin-top: .7rem;
+}
+
+.skills__malt-link {
+  margin-top: 1.5rem;
 }

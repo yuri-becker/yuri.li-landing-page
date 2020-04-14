@@ -5,7 +5,7 @@ export const ParallaxImage: React.FC<{ className?: string, src: string, alt: str
   const imgRef = useRef<HTMLImageElement>(null)
 
   useEffect(() => {
-    imgRef.current && new Rellax(imgRef.current, {speed: 3})
+    imgRef.current && new Rellax(imgRef.current, {center: true})
   }, [imgRef])
 
   return (

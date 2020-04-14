@@ -20,8 +20,8 @@ export const Skills: FC<{ skillsRepo: SkillsRepository }> = ({skillsRepo}) => {
           <ul className='skills-list'>
             {skills?.slice(0, !expanded ? 5 : undefined).map(skill => <Skill key={skill.name} skill={skill}/>)}
           </ul>
-          {!expanded && <button className='button--flat' onClick={() => setExpanded(true)}>More...</button>}
-          <a href='https://yuri.li/ref/malt'>
+          {!expanded && <button className='skills__more button--flat' onClick={() => setExpanded(true)}>More...</button>}
+          <a href='https://yuri.li/ref/malt' className={'skills__malt-link'}>
             <button>Hire me on Malt</button>
           </a>
         </React.Fragment>
