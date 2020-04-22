@@ -1,0 +1,66 @@
+{
+  "name": "yuri.li-landing-page.web",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/lodash": "^4.14.149",
+    "@types/node": "^12.12.27",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@types/rellax": "^1.7.2",
+    "axios": "^0.19.2",
+    "lodash": "^4.17.15",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-progressive-loader": "^0.4.1",
+    "react-scripts": "3.3.1",
+    "rellax": "^1.12.1",
+    "typescript": "^3.7.5"
+  },
+  "devDependencies": {
+    "firebase-tools": "^8.0.2",
+    "node-sass": "^4.13.1",
+    "rimraf": "^3.0.2",
+    "uglifycss": "^0.0.29"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "npm run compileCss && react-scripts build && npm run cleanBuildOutput",
+    "compileCss": "node-sass --output-style compressed public/index.scss > public/index.min.css",
+    "cleanBuildOutput": "rimraf build/index.scss && rimraf build/static/js/**.js.map && rimraf build/static/js/**.LICENSE.txt"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "rules": {
+      "no-extra-semi": "error",
+      "curly": [
+        "error",
+        "multi"
+      ],
+      "func-style": [
+        "error",
+        "expression"
+      ],
+      "prefer-template": "error",
+      "quotes": [
+        "error",
+        "single",
+        {
+          "avoidEscape": true
+        }
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

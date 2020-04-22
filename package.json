@@ -1,0 +1,12 @@
+{
+  "name": "yuri.li-landing-page",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "firebase-tools": "^7.13.0"
+  },
+  "scripts": {
+    "deploy": "firebase deploy"
+  }
+}
