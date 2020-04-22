@@ -111,7 +111,6 @@ body {
   }
 }
 
-
 h1, h2 {
   font-variant: small-caps;
   text-shadow: 1px 1px 2px #201f1f;
@@ -193,6 +192,12 @@ section {
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+section#cookie-banner {
+  font-size: 14px;
+  padding-top: 1em;
+  line-height: 1.5em;
 }
 
 section#about {
