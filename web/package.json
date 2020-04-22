@@ -20,13 +20,14 @@
   "devDependencies": {
     "firebase-tools": "^8.0.2",
     "node-sass": "^4.13.1",
+    "rimraf": "^3.0.2",
     "uglifycss": "^0.0.29"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run compileCss && react-scripts build",
-    "eject": "react-scripts eject",
-    "compileCss": "node-sass --output-style compressed public/index.scss > public/index.min.css"
+    "build": "npm run compileCss && react-scripts build && npm run cleanBuildOutput",
+    "compileCss": "node-sass --output-style compressed public/index.scss > public/index.min.css",
+    "cleanBuildOutput": "rimraf build/index.scss && rimraf build/static/js/**.js.map && rimraf build/static/js/**.LICENSE.txt"
   },
   "eslintConfig": {
     "extends": "react-app",
