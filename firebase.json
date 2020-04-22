@@ -11,12 +11,12 @@
     "predeploy": "npm --prefix web run build",
     "rewrites": [
       {
-        "source": "**",
-        "destination": "/index.html"
-      },
-      {
         "source": "/ref/**",
         "dynamicLinks": true
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   },
