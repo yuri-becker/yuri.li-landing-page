@@ -3,6 +3,7 @@ import {BlogPost} from './BlogPost'
 import {Loader} from '../common/Loader'
 import {BlogPost as IBlogPost, BlogRepository} from '../BlogRepository'
 import {ParallaxImage} from '../common/ParallaxImage'
+import {CtaButton} from '../common/CtaButton'
 
 export const Blog: React.FC<{ blogRepo: BlogRepository }> = ({blogRepo}) => {
   const [blogPosts, setBlogPosts] = useState<undefined | IBlogPost[]>()
@@ -18,6 +19,7 @@ export const Blog: React.FC<{ blogRepo: BlogRepository }> = ({blogRepo}) => {
       <div className="content-wrap">
         <h2>Recent Stories on Medium</h2>
         {blogPosts ? blogPosts.map(blogPost => (<BlogPost key={blogPost.key} blogPost={blogPost}/>)) : <Loader/>}
+        <CtaButton text='Read more on Medium' link='https://yuri.li/ref/medium'/>
       </div>
     </div>
   )

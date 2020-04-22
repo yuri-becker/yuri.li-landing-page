@@ -3,10 +3,10 @@ import {Skill as ISkill, SkillsRepository} from '../SkillsRepository'
 import {Loader} from '../common/Loader'
 import {range} from 'lodash'
 import {ParallaxImage} from '../common/ParallaxImage'
+import {CtaButton} from '../common/CtaButton'
 
 export const Skills: FC<{ skillsRepo: SkillsRepository }> = ({skillsRepo}) => {
   const [skills, setSkills] = useState<ISkill[] | undefined>(undefined)
-  const [expanded, setExpanded] = useState<boolean>(false)
 
   useEffect(() => {
     skillsRepo.skills.then(setSkills)
@@ -17,17 +17,26 @@ export const Skills: FC<{ skillsRepo: SkillsRepository }> = ({skillsRepo}) => {
       <h2>Skills</h2>
       {!skills ? <Loader/> :
         <React.Fragment>
-          <ul className='skills-list'>
-            {skills?.slice(0, !expanded ? 5 : undefined).map(skill => <Skill key={skill.name} skill={skill}/>)}
-          </ul>
-          {!expanded && <button className='skills__more button--flat' onClick={() => setExpanded(true)}>More...</button>}
-          <a href='https://yuri.li/ref/malt' className={'skills__malt-link'}>
-            <button>Hire me on Malt</button>
-          </a>
+          <SkillsList skills={skills}/>
+          <CtaButton text='Hire me on Malt' link='https://yuri.li/ref/malt'/>
         </React.Fragment>
       }
     </div>
     <ParallaxImage src='/assets/images/skills.jpg' alt='Screen showing HTML code' className='section-image'/>
+  </div>
+}
+
+const SkillsList: React.FC<{ skills: ISkill[] }> = ({skills}) => {
+  const [expanded, setExpanded] = useState<boolean>(false)
+
+  return <div className='skills-list'>
+    <ul className={expanded ? 'skills-list--expanded' : ''}>
+      {skills?.slice(0, !expanded ? 5 : undefined).map(skill => <Skill key={skill.name} skill={skill}/>)}
+
+      {
+        !expanded && <li><button className='skills__more button--flat' onClick={() => setExpanded(true)}>More...</button></li>
+      }
+    </ul>
   </div>
 }
 

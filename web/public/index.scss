@@ -18,6 +18,13 @@ $walter-white: #fff;
   }
 }
 
+
+@mixin button-color($color) {
+  button:not(.button--flat) {
+    background-color: $color;
+  }
+}
+
 html, body {
   background-color: $bertha-base;
   min-height: 100%;
@@ -27,6 +34,8 @@ html, body {
   font-size: 20px;
   line-height: 1.7em;
 }
+
+@include button-color($bertha-base)
 
 
 body {
@@ -68,12 +77,17 @@ body {
 
 @include large-screens {
   .content-side-image-wrap {
+    $outer-padding: 16.6vw;
+    $inner-padding: 2.4rem;
+
     > .content-wrap:first-child {
-      padding-left: 16.6vw;
+      padding-left: $outer-padding;
+      padding-right: $inner-padding;
     }
 
     > .content-wrap:last-child {
-      padding-right: 16.6vw;
+      padding-right: $outer-padding;
+      padding-left: $inner-padding;
     }
   }
 }
@@ -137,6 +151,7 @@ section {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  min-height: 4rem;
 }
 
 .socials-container {
@@ -222,6 +237,7 @@ section#about {
 section#blog {
   background-color: $regina-red;
   @include section-transition('right');
+  @include button-color($pamela-purple);
 }
 
 .blog-post {
@@ -249,9 +265,10 @@ section#blog {
   }
 }
 
-#skills {
+section#skills {
   background-color: $pamela-purple;
   @include section-transition('left');
+  @include button-color($regina-red);
 }
 
 .loader {
@@ -265,19 +282,42 @@ section#blog {
   text-overflow: fade;
 }
 
-ul.skills-list {
-  list-style: none;
-  padding: 0;
-  font-weight: 600;
-  margin: 0;
+@keyframes skills-expand {
+  from {
+    max-height: 8.4rem;
+  }
+  to {
+    max-height: 100rem;
+  }
+}
 
-  .skills__stars {
-    i {
-      margin-right: .4em;
+.skills-list {
+  > ul {
+    list-style: none;
+    padding: 0;
+    font-weight: 600;
+    margin: 0;
 
-      &:last-child {
-        margin-right: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    > li {
+      width: 15rem;
+    }
+
+    .skills__stars {
+      i {
+        margin-right: .4em;
+
+        &:last-child {
+          margin-right: 1em;
+        }
       }
+    }
+
+    &.skills-list--expanded {
+      animation: skills-expand ease-out 2s;
     }
   }
 }
@@ -292,7 +332,6 @@ button {
   text-decoration: underline;
 
   &:not(.button--flat) {
-    background-color: $regina-red;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     padding: .5em 1.3em;
   }
@@ -304,6 +343,7 @@ button {
   }
 }
 
+
 .parallax-img-wrapper {
   overflow: hidden;
 
@@ -312,12 +352,10 @@ button {
     height: 200%;
     object-fit: cover;
   }
-}pa
-
-.skills__more {
-  margin-top: .7rem;
 }
 
-.skills__malt-link {
+.cta-button {
   margin-top: 1.5rem;
 }
+
+
