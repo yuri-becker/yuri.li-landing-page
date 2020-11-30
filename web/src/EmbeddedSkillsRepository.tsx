@@ -17,6 +17,7 @@ export class EmbeddedSkillsRepository implements SkillsRepository {
     {name: 'Vaadin', level: 3},
     {name: 'Ionic', level: 3},
     {name: 'REST', level: 3},
+    {name: 'Vue.js', level: 3},
     {name: 'UI Design', level: 2},
     {name: 'Node.js', level: 2},
     {name: 'Xamarin', level: 2},

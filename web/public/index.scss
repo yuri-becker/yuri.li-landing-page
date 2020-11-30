@@ -217,13 +217,18 @@ section#about {
   }
 }
 
-@mixin section-transition($dir) {
+@mixin section-transition($dir, $overlap) {
 
   $slope-height: 4.4rem;
+
+  @if $overlap {
+    margin-top: -#{$slope-height};
+  }
 
   .content-wrap {
     padding-top: $slope-height;
     padding-bottom: $slope-height;
+    box-sizing: content-box;
   }
 
   @include small-screens {
@@ -241,7 +246,7 @@ section#about {
 
 section#blog {
   background-color: $regina-red;
-  @include section-transition('right');
+  @include section-transition('right', false);
   @include button-color($pamela-purple);
 }
 
@@ -272,7 +277,7 @@ section#blog {
 
 section#skills {
   background-color: $pamela-purple;
-  @include section-transition('left');
+  @include section-transition('left', true);
   @include button-color($regina-red);
 }
 
@@ -362,5 +367,3 @@ button {
 .cta-button {
   margin-top: 1.5rem;
 }
-
-
