@@ -3,29 +3,16 @@
   "version": "0.1.1",
   "private": true,
   "dependencies": {
-    "axios": "^0.19.2",
-    "lodash": "^4.17.15",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-progressive-loader": "^0.4.1",
-    "react-scripts": "^3.4.4",
-    "rellax": "^1.12.1",
-    "typescript": "^3.9.7"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.165",
-    "@types/node": "^14.14.10",
-    "@types/react": "^16.14.2",
-    "@types/react-dom": "^16.9.10",
-    "@types/rellax": "^1.7.3",
-    "node-sass": "^4.14.1",
+    "node-sass": "^6.0.1",
     "rimraf": "^3.0.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "npm run compileCss && react-scripts build && npm run cleanBuildOutput",
-    "compileCss": "node-sass --output-style compressed public/index.scss > public/index.min.css",
-    "cleanBuildOutput": "rimraf build/index.scss && rimraf build/static/js/**.js.map && rimraf build/static/js/**.LICENSE.txt"
+    "build": " npm run cleanBuildOutput && npm run compileCss && npm run copyBuild",
+    "compileCss": "node-sass --output-style compressed public/index.scss public/index.min.css",
+    "cleanBuildOutput": "rimraf build",
+    "copyBuild": "mkdir build && cp public/index.min.css build/index.min.css && cp public/index.html build/index.html && cp public/robots.txt build/robots.txt && cp -r public/assets build/assets"
   },
   "eslintConfig": {
     "extends": "react-app",
