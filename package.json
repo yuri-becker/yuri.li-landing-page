@@ -1,12 +1,51 @@
 {
   "name": "yuri.li-landing-page",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {},
+  "version": "1.0.0",
+  "dependencies": {
+  },
   "devDependencies": {
-    "firebase-tools": "^8.16.2"
+    "node-sass": "9.0.0",
+    "rimraf": "5.0.1",
+    "firebase-tools": "12.4.0"
   },
   "scripts": {
-    "deploy": "firebase deploy"
+    "preinstall": "npx only-allow pnpm",
+    "build": " npm run cleanBuildOutput && npm run compileCss && npm run copyBuild",
+    "compileCss": "node-sass --output-style compressed public/index.scss public/index.min.css",
+    "cleanBuildOutput": "rimraf build",
+    "copyBuild": "mkdir build && cp public/index.min.css build/index.min.css && cp public/index.html build/index.html && cp public/robots.txt build/robots.txt && cp -r public/assets build/assets"
+  },
+  "eslintConfig": {
+    "rules": {
+      "no-extra-semi": "error",
+      "curly": [
+        "error",
+        "multi"
+      ],
+      "func-style": [
+        "error",
+        "expression"
+      ],
+      "prefer-template": "error",
+      "quotes": [
+        "error",
+        "single",
+        {
+          "avoidEscape": true
+        }
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

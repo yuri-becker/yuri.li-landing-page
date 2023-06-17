@@ -1,12 +1,12 @@
 {
   "hosting": {
-    "public": "web/build",
+    "public": "build",
     "appAssociation": "AUTO",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**",
-      "web/public/*.scss"
+      "public/*.scss"
     ],
     "predeploy": "npm --prefix web run build",
     "rewrites": [
