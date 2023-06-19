@@ -3,103 +3,64 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
 
-    <title>Yuri | Web-developer and -designer</title>
-    <meta name="description"
-          content="I'm Yuri, a web developer and -designer living in the Rhineland (Germany)">
-    <meta name="author" content="Yuri Becker">
-    <meta name="viewport" content="width=device-width"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="assets/favicon/site.webmanifest">
-    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#2d89ef">
-    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#2C2828">
-    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-    <link href="index.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-    <script src="https://kit.fontawesome.com/3fa486f388.js"></script>
+  <title>Yuri | Web-developer and -designer</title>
+  <meta name="description" content="I'm Yuri, a web developer and -designer living in the Rhineland (Germany)">
+  <meta name="author" content="Yuri Becker">
+  <meta name="viewport" content="width=device-width" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="msapplication-config" content="assets/browserconfig.xml">
+  <meta name="theme-color" content="#2C2828">
+  <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+  <link href="index.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/3fa486f388.js" crossorigin="anonymous"></script>
 </head>
-
-<body onscroll="implicitCookieConsent()">
-
-<section id="cookie-banner" class="content-wrap">
-    <div>
-        This website is using cookies (including Google Analytics) so I can get an insight into user demographics and
-        performance data.<br/>
-        By continuing on this site, you consent to me tracking your usage on yuri.li using cookies. If you do not
-        consent,
-        leave now.<br/>
-        <button onclick="explicitCookieConsent()" class="button--flat">I consent.</button>
-    </div>
-    <script>
-      function hideCookieBanner() {
-        document.getElementById('cookie-banner').style.setProperty('display', 'none')
-      }
-
-      Cookies.get('explicitCookieConsent') && hideCookieBanner()
-    </script>
-</section>
+<body>
+<div id="backdrop" aria-hidden="true"></div>
+<div id="vignette" aria-hidden="true"></div>
 <main>
-    <div class="content-wrap">
-        <h1>yuri.li</h1>
-        <p>
-            👋 I'm Yuri <span class="snw">(she/her)</span>, a web developer and -designer living in the Rhineland (Germany).
-        </p>
-        <p>
-            I feel at home at the frontend side of things, especially when it comes to apps and the web.
-            <span class="pam">Angular, React, Vaadin, and Ionic</span> are the frameworks I am most familiar with.
-            <br/>
-            With that being said, I am also able to develop full-stack and know myself around with several backend
-            technologies, like <span class="pam">Spring, Express.js</span> and both document and conventional SQL databases.
-        </p>
-        <div class="socials-container">
-                <span class="socials">
-                    <a href="https://yuri.li/ref/github">
-                        <i class="fab fa-github-square" tabindex="-1"></i> GitHub
-                    </a>
-                    <a href="https://yuri.li/ref/linkedin">
-                        <i class="fab fa-linkedin" tabindex="-1"></i> LinkedIn
-                    </a>
-                    <a href="https://yuri.li/ref/medium">
-                        <i class="fab fa-medium" tabindex="-1"></i> Medium
-                    </a>
-                    <a href="https://yuri.li/ref/malt">
-                        <i class="fas fa-handshake" tabindex="-1"></i> Hire me on Malt
-                    </a>
-                </span>
-        </div>
+  <div class="content-wrap">
+    <p>
+      👋 I'm Yuri <span class="snw">(she/her)</span>, a developer living in the Rhineland <span class="snw">(Germany)</span>.
+    </p>
+    <p>
+      I feel right at home in the world of frontend development, focusing on web and
+      mobile experiences.<br/>
+      My expertise lies in popular frameworks such as <span class="pam">Angular, React</span>, <span class="pam">Vaadin</span>, and <span class="pam">Ionic.</span> These
+      technologies enable me to create stunning user interfaces and deliver seamless
+      experiences.</p>
+    <p>
+      When it comes to putting everything together, I also provide full-stack development, leveraging backend
+      technologies like<span class="pam">
+        Spring, Express.js</span> and <span class="pam">NestJS</span>.<br />
+      I'm also well-versed in various database technologies such as traditional SQL or the latest document-based
+      databases - including <span class="pam">MongoDB</span>.
+    </p>
+    Together with my extensive expertise and experience and your ideas, we will deliver outstanding results together
+    across the board for your business.<br>
+    <span class="pam">Let's make your vision a reality together!</span>
+    </p>
+    <div class="socials-container">
+      <span class="socials">
+        <a href="https://github.com/yuri-becker">
+          <i class="fa-brands fa-square-github"></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/yuri-becker-75479a172/">
+          <i class="fab fa-linkedin" tabindex="-1"></i> LinkedIn
+        </a>
+        <a href="https://www.malt.de/profile/yuribecker">
+          <i class="fa-solid fa-laptop-code"></i> Hire me on Malt
+        </a>
+      </span>
     </div>
+  </div>
 </main>
-
-<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
-<script>
-  firebase.initializeApp({
-    apiKey: 'AIzaSyAduCMSLLbdF0CQ5_ANJSetOqTWEAz0WMY',
-    authDomain: 'landing-page-245120.firebaseapp.com',
-    databaseURL: 'https://landing-page-245120.firebaseio.com',
-    projectId: 'landing-page-245120',
-    storageBucket: 'landing-page-245120.appspot.com',
-    messagingSenderId: '148555408977',
-    appId: '1:148555408977:web:ead6b38a7296d537bcba70',
-    measurementId: 'G-07RPVSLVB2'
-  });
-
-  function implicitCookieConsent() {
-    firebase.analytics()
-  }
-
-  function explicitCookieConsent() {
-    Cookies.set('explicitCookieConsent', 'yes', {expires: 365})
-    firebase.analytics()
-    hideCookieBanner()
-  }
-</script>
 </body>
-
 </html>

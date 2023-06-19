@@ -1,19 +1,20 @@
 {
   "name": "yuri.li-landing-page",
   "version": "1.0.0",
-  "dependencies": {
-  },
   "devDependencies": {
-    "node-sass": "9.0.0",
+    "sass": "1.63.4",
     "rimraf": "5.0.1",
-    "firebase-tools": "12.4.0"
+    "stylelint": "^15.8.0",
+    "stylelint-config-standard-scss": "^9.0.0"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "build": " npm run cleanBuildOutput && npm run compileCss && npm run copyBuild",
-    "compileCss": "node-sass --output-style compressed public/index.scss public/index.min.css",
-    "cleanBuildOutput": "rimraf build",
-    "copyBuild": "mkdir build && cp public/index.min.css build/index.min.css && cp public/index.html build/index.html && cp public/robots.txt build/robots.txt && cp -r public/assets build/assets"
+    "dev": "concurrently -n scss,serve -c blue,green \"pnpm build:css --watch\" \"http-server ./public -o -s -a localhost\"",
+    "lint": "stylelint public/index.scss",
+    "build": "npm run build:clean && npm run build:css && npm run build:copy",
+    "build:css": "sass --style compressed public/index.scss:public/index.min.css",
+    "build:clean": "rimraf build",
+    "build:copy": "mkdir build && cp public/index.min.css build/index.min.css && cp public/index.html build/index.html && cp public/robots.txt build/robots.txt && cp -r public/assets build/assets"
   },
   "eslintConfig": {
     "rules": {
@@ -47,5 +48,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "concurrently": "^8.2.0",
+    "http-server": "^14.1.1"
   }
 }
