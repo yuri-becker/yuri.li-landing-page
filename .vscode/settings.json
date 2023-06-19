@@ -1,0 +1,9 @@
+{
+  "stylelint.packageManager": "pnpm",
+  "stylelint.validate": [
+    "css",
+    "less",
+    "postcss",
+    "scss"
+  ]
+}
