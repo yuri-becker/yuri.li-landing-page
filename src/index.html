@@ -6,20 +6,19 @@
   <meta charset="utf-8">
 
   <title>Yuri | Web-developer and -designer</title>
-  <meta name="description" content="I'm Yuri, a web developer and -designer living in the Rhineland (Germany)">
+  <meta name="description" content="I'm Yuri, a web developer">
   <meta name="author" content="Yuri Becker">
   <meta name="viewport" content="width=device-width" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-  <link rel="manifest" href="assets/site.webmanifest">
-  <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/favicon.ico">
   <meta name="msapplication-TileColor" content="#2d89ef">
-  <meta name="msapplication-config" content="assets/browserconfig.xml">
+  <meta name="msapplication-config" content="/browserconfig.xml">
   <meta name="theme-color" content="#2C2828">
-  <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-  <link href="index.min.css" rel="stylesheet">
+  <link href="/index.scss" rel="stylesheet">
   <script src="https://kit.fontawesome.com/3fa486f388.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -28,7 +27,7 @@
 <main>
   <div class="content-wrap">
     <p>
-      👋 I'm Yuri <span class="snw">(she/her)</span>, a developer living in the Rhineland <span class="snw">(Germany)</span>.
+      👋 I'm Yuri <span class="snw">(she/her)</span>, a developer living in the Düsseldorf/Cologne area.
     </p>
     <p>
       I feel right at home in the world of frontend development, focusing on web and
@@ -50,15 +49,19 @@
     <div class="socials-container">
       <span class="socials">
         <a href="https://github.com/yuri-becker">
-          <i class="fa-brands fa-square-github"></i> GitHub
+          <i class="icon-github">
+            <svg> <use xlink:href="/icons.svg#icon-github"></use> </svg></i>&nbsp;GitHub
         </a>
         <a href="https://www.linkedin.com/in/yuri-becker-75479a172/">
-          <i class="fab fa-linkedin" tabindex="-1"></i> LinkedIn
+          <i class="icon-linkedin">
+            <svg> <use xlink:href="/icons.svg#icon-linkedin"></use></svg>
+          </i>&nbsp;LinkedIn
         </a>
         <a href="https://www.malt.de/profile/yuribecker">
-          <i class="fa-solid fa-laptop-code"></i> Hire me on Malt
+          <i class="icon-chat-message"><svg>
+            <use xlink:href="/icons.svg#icon-chat-message"></use>
+            </svg></i>&nbsp;Hire me on Malt
         </a>
-      </span>
     </div>
   </div>
 </main>

@@ -1,18 +1,7 @@
-$bertha-base: #2c2828;
-$regina-red: #f67280;
-$walter-white: #fff;
-
-@font-face {
-  font-family: Nunito;
-  src: url("assets/Nunito-Regular.ttf");
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: Nunito;
-  src: url("assets/Nunito-Medium.ttf");
-  font-weight: 450;
-}
+@import './scss/animations';
+@import './scss/colors';
+@import './scss/icons8';
+@import './scss/nunito';
 
 html,
 body {
@@ -41,7 +30,7 @@ body {
 
 #backdrop {
   position: absolute;
-  background: url("assets/bg.jpeg");
+  background: url("/bg.jpeg");
   background-size: cover;
   background-position: center;
   height: 100%;
@@ -55,32 +44,6 @@ body {
   width: 100%;
   background: radial-gradient(transparent 50%, #000);
   background-blend-mode: exclusion;
-}
-
-@keyframes blur-in {
-  0% {
-    filter: blur(45px);
-  }
-
-  100% {
-    filter: blur(0);
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform-origin: 50% 50%;
-    transform: scale(3, 3);
-    filter: blur(90px);
-  }
-
-  100% {
-    opacity: 1;
-    transform-origin: 50% 50%;
-    transform: scale(1, 1);
-    filter: blur(0);
-  }
 }
 
 main {

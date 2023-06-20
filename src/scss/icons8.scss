@@ -1,0 +1,25 @@
+.icon-github, 
+.icon-linkedin, 
+.icon-heart-rainbow, 
+.icon-chat-message
+ {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    /* stylelint-disable-next-line value-keyword-case */
+    fill: currentColor;
+    vertical-align: -0.1em;
+}
+
+.icon-github>svg, 
+.icon-linkedin>svg, 
+.icon-heart-rainbow>svg, 
+.icon-chat-message>svg
+ {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    /* stylelint-disable-next-line value-keyword-case */
+    fill: currentColor;
+    vertical-align: -0.1em;
+}

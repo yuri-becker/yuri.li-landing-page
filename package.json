@@ -1,56 +1,19 @@
 {
   "name": "yuri.li-landing-page",
   "version": "1.0.0",
+  "type": "module",
   "devDependencies": {
     "sass": "1.63.4",
-    "rimraf": "5.0.1",
-    "stylelint": "^15.8.0",
-    "stylelint-config-standard-scss": "^9.0.0"
+    "stylelint": "15.8.0",
+    "stylelint-config-standard-scss": "9.0.0",
+    "vite": "4.3.9",
+    "vite-plugin-html": "3.2.0"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev": "concurrently -n scss,serve -c blue,green \"pnpm build:css --watch\" \"http-server ./public -o -s -a localhost\"",
-    "lint": "stylelint public/index.scss",
-    "build": "npm run build:clean && npm run build:css && npm run build:copy",
-    "build:css": "sass --style compressed public/index.scss:public/index.min.css",
-    "build:clean": "rimraf build",
-    "build:copy": "mkdir build && cp public/index.min.css build/index.min.css && cp public/index.html build/index.html && cp public/robots.txt build/robots.txt && cp -r public/assets build/assets"
-  },
-  "eslintConfig": {
-    "rules": {
-      "no-extra-semi": "error",
-      "curly": [
-        "error",
-        "multi"
-      ],
-      "func-style": [
-        "error",
-        "expression"
-      ],
-      "prefer-template": "error",
-      "quotes": [
-        "error",
-        "single",
-        {
-          "avoidEscape": true
-        }
-      ]
-    }
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "dependencies": {
-    "concurrently": "^8.2.0",
-    "http-server": "^14.1.1"
+    "lint": "stylelint src/**/*.scss",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   }
 }
