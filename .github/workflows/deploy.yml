@@ -10,7 +10,6 @@ concurrency:
   group: pages
   cancel-in-progress: false
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
     environment:
       name: github-pages
@@ -41,6 +40,8 @@ jobs:
             ${{ runner.os }}-pnpm-store-
       - name: Install depenencies
         run: pnpm install
+      - name: Lint
+        run: pnpm run lint
       - name: Build
         run: pnpm build
       - name: Setup Pages

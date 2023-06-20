@@ -56,10 +56,10 @@ main {
 }
 
 .content-wrap {
-  box-sizing: border-box;
-
   $horizontal-margin: 1rem;
 
+  box-sizing: border-box;
+  max-width: 43rem;
   margin: $horizontal-margin auto $horizontal-margin;
   padding: 1.5rem 2rem;
   width: calc(67vw + #{$horizontal-margin});
