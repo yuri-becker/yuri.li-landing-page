@@ -30,13 +30,24 @@ body {
 
 #backdrop {
   position: absolute;
-  background: url("/bg.jpeg");
-  background-size: cover;
-  background-position: center;
-  height: 100%;
   width: 100%;
-  animation: fade-in 0.8s both ease-out;
+  height: 100%;
+  overflow: hidden;
+
+  > div {
+    background: center / cover url("/bg.jpeg");
+    height: 100%;
+    width: 100%;
+    animation: fade-in 0.8s both ease-out;
+  }
 }
+
+@media (prefers-reduced-motion) {
+  #backdrop > div {
+    animation: none;
+  }
+}
+
 
 #vignette {
   position: absolute;
@@ -49,15 +60,18 @@ body {
 main {
   padding: 2rem;
   margin: 0;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  overflow: hidden;
+  min-height: 100vh;
 }
 
 .content-wrap {
   $horizontal-margin: 1rem;
 
+  position: relative;
   box-sizing: border-box;
   max-width: 43rem;
   margin: $horizontal-margin auto $horizontal-margin;
@@ -71,6 +85,12 @@ main {
   -webkit-backdrop-filter: blur(11.6px);
   border: 1px solid rgb(255 255 255 / 20%);
   animation: fade-in 0.8s both ease-out;
+}
+
+@media (prefers-reduced-motion) {
+  .content-wrap {
+    animation: none;
+  }
 }
 
 @media (width <= 400px) {
